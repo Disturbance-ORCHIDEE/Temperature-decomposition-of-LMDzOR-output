@@ -105,10 +105,34 @@ Dimensional analysis for Eq. \ref{eq:final_simplified} was used to show that the
 & \underbrace{\mathrm{W\,m^{-2}}}_{\Delta LE} \\
 & + \underbrace{\mathrm{W\,m^{-2}}}_{\Delta H} \\
 & + \underbrace{\mathrm{W\,m^{-2}}}_{\Delta G} \\
-
-# Known shortcomings
-
-# License
 & + \underbrace{\mathrm{W\,m^{-2}} \cdot 1}_{R_{si}\Delta\alpha} \\
 & - \underbrace{1 \cdot \mathrm{W\,m^{-2}}}_{(1 - \alpha)\Delta R_{si}} \\
 & + \underbrace{\mathrm{W\,m^{-2}K^{-4}} \cdot \mathrm{K^3} \cdot \mathrm{K}}_{4\sigma T_s^3 \Delta T_s} \\
+
+# Data needs
+List of variables extracted from the LMDzOR model for temperature and precipitation decomposition analysis.
+| Variable Description | Label in LMDzOR | Unit | Source Model |
+|---|---|---|---|
+| Surface temperature ($T_s$) | temp\_sol | $^\circ$C | LMDzOR |
+| Near-surface air temperature ($T_a$) | tair | K | LMDzOR |
+| Surface emissivity ($\varepsilon_s$) | emis | unitless | LMDzOR |
+| Air emissivity ($\varepsilon_a$) | - | unitless | Calculated in 'TemperatureDecompositionCode.py' |
+| Surface albedo ($\alpha$) | - | unitless | Calculated in 'TemperatureDecompositionCode.py' |
+| Sensible heat flux (H) | fluxsens | W\,m$^{-2}$ | LMDzOR |
+| Latent heat flux (LE) | fluxlat | W\,m$^{-2}$ | LMDzOR |
+| Ground heat flux (G) | Qg | W\,m$^{-2}$ | LMDzOR |
+| Longwave incoming radiation ($R_{li}$) | lwdown | W\,m$^{-2}$ | LMDzOR |
+| Longwave outgoing radiation ($R_{lo}$) | LWupSFC | W\,m$^{-2}$ | LMDz |
+| Shortwave incoming radiation ($R_{si}$) | swdown | W\,m$^{-2}$ | LMDzOR |
+| Shortwave outgoing radiation ($R_{so}$) | SWupSFC | W\,m$^{-2}$ | LMDz |
+
+# Known shortcomings
+* The meta model assumes that within a single time step the atmosphere is in equilibrium with the surface.
+* Vertical nor horizontal transport of heat are considered.
+* The meta-models underlying temperature and precipitation decomposition thus have very different underlying assumptions. 
+
+# License
+This software is governed by the CeCILL license, version 2.1, under French law and abiding by the rules of distribution of free software (https://cecill.info). See the LICENSE file for the full text.
+
+
+
